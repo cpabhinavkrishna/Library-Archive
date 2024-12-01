@@ -1,0 +1,51 @@
+.books{
+    background-color: #756a61;
+    padding: 25px ;
+}
+.herosection{
+    background-image: url('../../images/banner.jpg');
+    background-position:center ;
+    opacity: 0.8;
+    height: 400px;
+    background-size: cover;
+    color: rgb(233,226,209);
+    font-weight: 700;
+    font-size: 44px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    padding: 40px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; ;
+   }
+
+   .cardsection{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+
+}
+.card{
+    height: 350px;
+    width: 200px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    position: relative;
+}
+.card:hover{
+    box-shadow: -1px 1px 19px 12px rgba(0,0,0,0.2);
+}
+.card img{
+    width: 100%;
+    height:100% ;
+    object-fit:cover;
+}
+.card span{
+    position: absolute;
+    bottom:25px;
+    left:5px;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+    color: rgb(208, 208, 208);
+    font-size: 40px;
+}
