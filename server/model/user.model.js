@@ -15,7 +15,7 @@ const Users = mongoose.Schema(
       required: true,
     },
     cart_data: [
-      { book_id: { type: mongoose.Schema.Types.ObjectId, ref: "books" } },
+      { book_id: { type: Number } },
     ],
     created_on: {
       type: Date,

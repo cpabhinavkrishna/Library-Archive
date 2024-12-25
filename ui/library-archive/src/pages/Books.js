@@ -1,11 +1,10 @@
-import React, {useEffect, useState } from 'react'
+import React, {useContext, useEffect, useState } from 'react'
 import './CSS/Books.css'
 import BookComponent from '../component/BookComponent';
+import { BookContext } from '../context/BookContext';
 const Books = () => {
-    const [allBooks,setAllBooks] = useState([]);
-    useEffect(()=>{
-        fetch('http://localhost:4000/allbooks').then(res=>res.json()).then(data=>setAllBooks(data));
-    },[]);
+   const {allBooks}  = useContext(BookContext);
+   
   return (
     <div className="books">
       <section className='herosection'>
