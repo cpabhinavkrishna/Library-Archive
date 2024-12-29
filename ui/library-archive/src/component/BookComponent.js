@@ -9,8 +9,8 @@ const BookComponent = (props) => {
        <Link to={"/book/"+props.id}>
            <img src={props.banner} alt="posterimage"/>
            </Link>
-           <button onClick={addToCart(props.id)}>Add to cart</button> 
-           <button onClick={removeFromCart(props.id)}>Remove from cart</button>
+           <button onClick={()=>addToCart(props.id)}>Add to cart</button> 
+           <button onClick={()=>removeFromCart(props.id)}>Remove from cart</button>
     </div>
   )
 }

@@ -7,6 +7,7 @@ const BookContextProvider = ({children})=>{
     const appServerURL = process.env.REACT_APP_SERVER_URL;
     const [allBooks,setAllBooks] = useState([]);
     const [cartItems,setCartItems] = useState([]);
+    console.log(cartItems);
     useEffect(()=>{
         const fetchData = async () => {
               const response = await fetch(appServerURL+'/allbooks');
@@ -14,6 +15,7 @@ const BookContextProvider = ({children})=>{
               setAllBooks(result);
         }
         fetchData();
+        console.log("Inside useEffect"+cartItems);
     },[]);
     // fetch(appServerURL+'/allbooks').then(res=>res.json()).then(data=>return data);
 
@@ -23,17 +25,17 @@ const BookContextProvider = ({children})=>{
         setCartItems((prev) => {
             if (!prev.includes(bookid)) {
                 return [...prev, bookid];
+            }else{
+                return prev;
             }
-            return prev;
-        });
-        console.log(cartItems);
-        
+        });     
     }
     const removeFromCart = (bookid)=>{
-        setCartItems((prev)=>{
-          return prev.filter((e)=>e!==bookid);
-        });
-        console.log(cartItems);
+        if(cartItems.includes(bookid)){
+            setCartItems((prev)=>{
+                return prev.filter((e)=>e!==bookid);
+              });
+        }
     }
     
     return(
